@@ -1,6 +1,5 @@
 body {
     margin: 0;
-    padding: 0;
     background-color: #f8f8f8;
     color: #212427
 }
@@ -17,12 +16,14 @@ h1 {
 .pai {
     width: 80%;
     height: 350px;
-    place-content: center;
-    place-self: center;
+    margin: auto;
     background-color: antiquewhite;
     border: solid 2px #212427;
 
-    
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: row;
 }
 
 .filho {
@@ -30,22 +31,26 @@ h1 {
     height: 80px;
     border-radius: 50px;
     text-align: center;
+    
 }
 
 .cor1 {
     background-color: #ED145B;
-    place-content: start;
-    
+    order: 1;
+    flex-direction: column;
+    justify-content: start;
 }
 
 .cor2 {
     background-color: #63B1BC;
-    place-self: center;
+    order: 3;
+    align-self: flex-end;
 }
 
 .cor3 {
     background-color: #EFB661;
-    place-self: end;
+    order: 2;
+    align-self: center;
 }
 
 .instrucoes {
