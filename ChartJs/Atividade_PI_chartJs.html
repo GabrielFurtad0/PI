@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Implementando o ChartJS</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<link rel="stylesheet" href="Style.css">
+
+<body>
+
+  <details>
+    <summary>Gráfico de linha</summary>
+    <div>
+      <canvas class="chart" id="myChart"></canvas>
+    </div>
+  </details>
+  <details>
+    <summary>Gráfico de barras</summary>
+    <div>
+      <canvas class="chart" id="myChartbarra"></canvas>
+    </div>
+  </details>
+
+</body>
+<script>
+
+  const labels = [
+    '12:00',
+    '13:00',
+    '14:00',
+    '15:00',
+    '16:00',
+    '17:00',
+  ];
+
+  const data = {
+    labels: labels,
+    datasets: [{
+      label: 'Temperatura',
+      backgroundColor: 'rgb(255, 99, 132)',
+      borderColor: 'rgb(255, 99, 132)',
+      data: [30, 29, 28, 25, 22, 23,],
+    },
+    {
+      label: 'Umidade',
+      backgroundColor: 'rgb(0, 0, 255)',
+      borderColor: 'rgb(0, 0, 255)',
+      data: [80, 82, 80, 85, 80, 83,],
+    }]
+
+  };
+
+
+  const config = {
+    type: 'line',
+    data: data,
+    options: {}
+  };
+
+  const labelsbarra = [
+    'Janeiro',
+    'Fevereiro',
+    'Maço',
+    'Abril',
+    'Maio',
+    'Junho',
+
+  ];
+  const databarra = {
+    labels: labelsbarra,
+    datasets: [{
+      label: 'Temperatura',
+      data: [22, 24, 27, 23, 20, 18],
+      backgroundColor: [
+        'rgba(255, 0 , 0, 0.2)',
+        'rgba(255, 0 , 0, 0.2)',
+        'rgba(255, 0 , 0, 0.2)',
+        'rgba(255, 0 , 0, 0.2)',
+        'rgba(255, 0 , 0, 0.2)',
+        'rgba(255, 0 , 0, 0.22)',
+        'rgba(255, 0 , 0, 0.22)'
+      ],
+      borderColor: [
+        'rgb(0. 0, 0)',
+        'rgb(0. 0, 0)',
+        'rgb(0. 0, 0)',
+        'rgb(0. 0, 0)',
+        'rgb(0. 0, 0)',
+        'rgb(0. 0, 0))',
+        'rgb(0. 0, 0))'
+      ],
+      borderWidth: 1
+    },
+    {
+      label: 'Umidade',
+      data: [90, 89, 93, 87, 88, 82],
+      backgroundColor: [
+        'rgba(0, 0 ,255, 0.2)',
+        'rgba(0, 0 ,255, 0.2)',
+        'rgba(0, 0 ,255, 0.2)',
+        'rgba(0, 0 ,255, 0.2)',
+        'rgba(0, 0 ,255, 0.2)',
+        'rgba(0, 0 ,255, 0.2)',
+        'rgba(0, 0 ,255, 0.2)'
+      ],
+      borderColor: [
+        'rgb(255 ,255, 255)',
+        'rgb(255 ,255, 255)',
+        'rgb(255 ,255, 255)',
+        'rgb(255 ,255, 255)',
+        'rgb(255 ,255, 255)',
+        'rgb(255 ,255, 2555)',
+        'rgb(255 ,255, 2557)'
+      ],
+      borderWidth: 1
+    }]
+  };
+
+  const configbarra = {
+    type: 'bar',
+    data: databarra,
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    },
+  };
+
+</script>
+<script>
+  const myChart = new Chart(
+    document.getElementById('myChart'),
+    config
+  )
+  const myChartbarra = new Chart(
+    document.getElementById('myChartbarra'),
+    configbarra
+  )
+</script>
+
+</html>
